@@ -1,0 +1,209 @@
+{
+  "date": "2026-10-14",
+  "environment": {
+    "os": "Windows",
+    "python": "3.12.10",
+    "threads_per_process": 2,
+    "installation": "New virtual environment; pinned requirements and constraints; pip check passed"
+  },
+  "scope": "Observed executions from empty output directories, not promises of historical manuscript errors.",
+  "smoke": {
+    "schema": 1,
+    "utc": "20261014T065324901401Z",
+    "python": "3.12.10",
+    "profile": "smoke",
+    "threads_per_process": 2,
+    "runs": [
+      {
+        "example": "pulsating_sphere",
+        "profile": "smoke",
+        "stage": "all",
+        "returncode": 0,
+        "elapsed_seconds": 1.1869281000035699,
+        "entrypoint_sha256": "9f49d26c45c89d5b09a300ac82f3c1fb957de8c93734b986e723bd09103d6e4c",
+        "log": "invocation_20261014T065324901401Z.log"
+      },
+      {
+        "example": "piston_duct",
+        "profile": "smoke",
+        "stage": "all",
+        "returncode": 0,
+        "elapsed_seconds": 4.024178299994674,
+        "entrypoint_sha256": "bebd29cea42357053c24101f892d88e6085fb2e5834372a24c0dea176a5730aa",
+        "log": "invocation_20261014T065324901401Z.log"
+      },
+      {
+        "example": "westervelt_cavity",
+        "profile": "smoke",
+        "stage": "all",
+        "returncode": 0,
+        "elapsed_seconds": 9.640681800003222,
+        "entrypoint_sha256": "2de462b21978f3ba7a200c83f5e112cde762fb8f281aa76e9b97bd119ddeea52",
+        "log": "invocation_20261014T065324901401Z.log"
+      }
+    ],
+    "scope": "Four-stage execution check; smoke results do not certify manuscript accuracy."
+  },
+  "paper_runs": [
+    {
+      "schema": 1,
+      "utc": "20261014T064307600307Z",
+      "python": "3.12.10",
+      "profile": "paper",
+      "threads_per_process": 2,
+      "runs": [
+        {
+          "example": "pulsating_sphere",
+          "profile": "paper",
+          "stage": "all",
+          "returncode": 0,
+          "elapsed_seconds": 36.030108899998595,
+          "entrypoint_sha256": "9f49d26c45c89d5b09a300ac82f3c1fb957de8c93734b986e723bd09103d6e4c",
+          "log": "invocation_20261014T064307600307Z.log"
+        }
+      ],
+      "scope": "Four-stage execution check; smoke results do not certify manuscript accuracy."
+    },
+    {
+      "schema": 1,
+      "utc": "20261014T064400663127Z",
+      "python": "3.12.10",
+      "profile": "paper",
+      "threads_per_process": 2,
+      "runs": [
+        {
+          "example": "piston_duct",
+          "profile": "paper",
+          "stage": "all",
+          "returncode": 0,
+          "elapsed_seconds": 99.1277528999999,
+          "entrypoint_sha256": "bebd29cea42357053c24101f892d88e6085fb2e5834372a24c0dea176a5730aa",
+          "log": "invocation_20261014T064400663127Z.log"
+        }
+      ],
+      "scope": "Four-stage execution check; smoke results do not certify manuscript accuracy."
+    }
+  ],
+  "pulsating_sphere_paper_prediction": {
+    "profile": "paper",
+    "prediction": {
+      "ratio": 0.9744548193197631,
+      "amplitude": 0.9,
+      "ramp_cycles": 0.35,
+      "phase": 0.63
+    },
+    "integration_complete": true,
+    "state_finite": true,
+    "pressure_finite": true,
+    "reference_finite": true,
+    "pressure_shape": [
+      9217,
+      129
+    ],
+    "source_sha256": {
+      "run.py": "9f49d26c45c89d5b09a300ac82f3c1fb957de8c93734b986e723bd09103d6e4c",
+      "physics.py": "dfa67d4611d22dc19a277924fdb10747cd7a4001216238212642a399ad4521eb",
+      "generate.py": "74b07d1eac14636a78ca524c560908b47a3c3e41ee0e1a79d65f2f6c4c84f814",
+      "pod.py": "67e691ac8fb421c46a186a127943e2a69cbbd79fe122138caa4200579438a222",
+      "train.py": "52da05b6064f538cb0db7a5223cf45cf7be480788fc5ff02e4ae2a676e1ea708",
+      "predict.py": "2be8c11512ca1f7d0b938aeaddd39c9fb24feaa332073dd1354628ea22f5ef71"
+    },
+    "samples": 9217,
+    "independent_state_dimension": 48,
+    "probe_radius_m": 0.393,
+    "probe_relative_l2": 7.034303514930985e-05,
+    "nodal_radial_weighted_relative_l2": 0.00018349324214296457,
+    "pressure_scale_Pa": 0.00328632675792731,
+    "pressure_units": "p/Pref",
+    "accuracy_scope": "single independent trajectory; not the published 50-frequency sweep"
+  },
+  "piston_duct_paper_prediction": {
+    "profile": "paper",
+    "historical_accuracy_claim": false,
+    "cases": [
+      {
+        "name": "startup",
+        "finite": true,
+        "cycles": 64,
+        "field_mass_weighted_relative_l2": 0.005481112806485952,
+        "piston_relative_l2": 0.00014825332642262918,
+        "midpoint_pressure_relative_l2": 0.005416235840124075,
+        "function_evaluations": 22924,
+        "initial_condition": "zero state"
+      },
+      {
+        "name": "high_48",
+        "finite": true,
+        "cycles": 64,
+        "field_mass_weighted_relative_l2": 0.0017434404722600023,
+        "piston_relative_l2": 1.1495114039711679e-06,
+        "midpoint_pressure_relative_l2": 0.0018509932277833315,
+        "function_evaluations": 39826,
+        "initial_condition": "independently synthesized high-amplitude periodic snapshot"
+      }
+    ],
+    "history_columns": [
+      "excitation_cycles",
+      "FEM_X",
+      "NN_X",
+      "FEM_pressure_mid",
+      "NN_pressure_mid"
+    ],
+    "reference": "Full FEM RK4; states carried between blocks without resets",
+    "nn_integrator": "DOP853",
+    "rtol": 2e-09,
+    "atol": 1e-11,
+    "samples_per_case": 8192,
+    "error_definition": "sqrt(sum((NN-FEM)^2)/sum(FEM^2)) over saved times; spatial pressure additionally uses lumped FEM mass weights; signed field error is FEM-NN"
+  },
+  "cavity_paper_executed": false,
+  "source_sha256": {
+    "examples/piston_duct/network.py": "a61d8c2680372feeb9dc7ef84aaee5415eb928eb110ebacc1225bfaf96414741",
+    "examples/piston_duct/physics.py": "e118797e5bf5089372b73871540843aa059a24debaf01e18aedac85eb6dd9457",
+    "examples/piston_duct/run.py": "bebd29cea42357053c24101f892d88e6085fb2e5834372a24c0dea176a5730aa",
+    "examples/pulsating_sphere/generate.py": "74b07d1eac14636a78ca524c560908b47a3c3e41ee0e1a79d65f2f6c4c84f814",
+    "examples/pulsating_sphere/physics.py": "dfa67d4611d22dc19a277924fdb10747cd7a4001216238212642a399ad4521eb",
+    "examples/pulsating_sphere/pod.py": "67e691ac8fb421c46a186a127943e2a69cbbd79fe122138caa4200579438a222",
+    "examples/pulsating_sphere/predict.py": "2be8c11512ca1f7d0b938aeaddd39c9fb24feaa332073dd1354628ea22f5ef71",
+    "examples/pulsating_sphere/run.py": "9f49d26c45c89d5b09a300ac82f3c1fb957de8c93734b986e723bd09103d6e4c",
+    "examples/pulsating_sphere/train.py": "52da05b6064f538cb0db7a5223cf45cf7be480788fc5ff02e4ae2a676e1ea708",
+    "examples/westervelt_cavity/common.py": "ebb147c91e1dbfc50722bd1c9e1ad98c626a220ddd9e206c06d403be094f1c33",
+    "examples/westervelt_cavity/dataset.py": "2a1fb65d50f019af6140d252b758f126b59cff3d9ece1683e2b364ba3859485f",
+    "examples/westervelt_cavity/network.py": "26086516bd01456c6ee4d02c0cde784afa9fd45127ee5b3f4a61b04f5d9d9038",
+    "examples/westervelt_cavity/physics.py": "f573d189d9f4b3a2679aadd0aadd9947bb74fe5c06ace2a14f6eda30f86786a4",
+    "examples/westervelt_cavity/run.py": "2de462b21978f3ba7a200c83f5e112cde762fb8f281aa76e9b97bd119ddeea52"
+  },
+  "config_sha256": {
+    "examples/piston_duct/config.json": "bb1fb07d0bb8f25296905fda248c52aa28a736e9b360fd876cffd471ed76a198",
+    "examples/pulsating_sphere/config.json": "664238efe21e3b8c455184d1a00adbaafeab1d37fa36e74a822e62d47300e87f",
+    "examples/westervelt_cavity/config.json": "01f37d6ea2fbe5d47d2742df0eb4fa0bebe3e45b3138309d1dfc40814a5e6aac"
+  },
+  "independent_checks": {
+    "sphere": [
+      "FEM exponential solution versus independent ODE integration",
+      "Continuous reference ODE",
+      "Pressure scaling and potential-velocity reconstruction",
+      "Data, proof and source mismatch rejection"
+    ],
+    "piston": [
+      "39 cases and 109824 raw samples",
+      "Split exclusivity and training-only augmentation parents",
+      "112736 fitting rows",
+      "Saved trajectory metrics and full-pressure mass weighting"
+    ],
+    "cavity": [
+      "Full sparse versus optimized native RHS",
+      "Half/full mass consistency",
+      "Double-Tanh readout folding",
+      "All 96768 paper training indices",
+      "Source/config/data/model cache identities",
+      "No full paper execution in this release check"
+    ]
+  },
+  "limitations": [
+    "Cavity paper generation/training/prediction has not been run afresh for this release.",
+    "Piston prediction tested for 64 periods, not the optional 3000-period horizon.",
+    "Sphere tested at one independent prediction condition, not its frequency sweep.",
+    "Smoke accuracy does not certify manuscript-scale numerical accuracy."
+  ]
+}

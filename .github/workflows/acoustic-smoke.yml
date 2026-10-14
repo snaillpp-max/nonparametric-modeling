@@ -1,0 +1,46 @@
+name: Acoustic examples
+
+on:
+  push:
+    paths:
+      - 'acoustic/**'
+      - '.github/workflows/acoustic-smoke.yml'
+  pull_request:
+    paths:
+      - 'acoustic/**'
+      - '.github/workflows/acoustic-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  four-stages:
+    name: ${{ matrix.example }} on ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        example: [pulsating_sphere, piston_duct, westervelt_cavity]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            acoustic/requirements.txt
+            acoustic/constraints.txt
+      - name: Install the numerical environment
+        run: python -m pip install -r acoustic/requirements.txt
+      - name: Generate data, construct and augment POD data, train, and integrate
+        run: python acoustic/run.py --example ${{ matrix.example }} --profile smoke --output "${{ runner.temp }}/acoustic-results" --threads 2
+      - name: Keep the actual execution reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.example }}-${{ matrix.os }}
+          path: ${{ runner.temp }}/acoustic-results
+          retention-days: 7

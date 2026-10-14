@@ -1,0 +1,60 @@
+{
+  "physical": {
+    "length": 1,
+    "k": 1800,
+    "c": 1.264911064,
+    "alpha_scaled": 300,
+    "xs": 0.00031622776601683794,
+    "mu": 0.5,
+    "beta": 0,
+    "eta": 0.0005,
+    "gamma": 0.3,
+    "force": 0.05
+  },
+  "common": {
+    "pod_rank": 32,
+    "harmonics": 7,
+    "seed_split": 20260923,
+    "seed_data": 20260924,
+    "seed_hidden": 20260912,
+    "augmentation_repeats": 4,
+    "augmentation_fraction": 0.2,
+    "rms_floor_fraction": 0.05,
+    "hidden_widths": [
+      64,
+      32
+    ],
+    "feature_scales": [
+      0.003,
+      0.01,
+      0.03,
+      0.1,
+      0.3
+    ],
+    "svd_cutoff": 1e-13,
+    "nn_rtol": 2e-9,
+    "nn_atol": 1e-11
+  },
+  "profiles": {
+    "smoke": {
+      "elements": 64,
+      "fem_steps_per_cycle": 256,
+      "recorded_points_per_cycle": 64,
+      "trajectory_cycles": 4,
+      "augmentation_parents": 64,
+      "prediction_cycles": 4,
+      "prediction_block_cycles": 4,
+      "base_fem_steps_per_cycle": 256
+    },
+    "paper": {
+      "elements": 2048,
+      "fem_steps_per_cycle": 4096,
+      "recorded_points_per_cycle": 128,
+      "trajectory_cycles": 64,
+      "augmentation_parents": 512,
+      "prediction_cycles": 64,
+      "prediction_block_cycles": 32,
+      "base_fem_steps_per_cycle": 2048
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "paper": {
+    "profile": "paper",
+    "nx": 1024,
+    "ny": 512,
+    "beta": 3.0,
+    "eta": 0.0005,
+    "omega_reference": 50.418647180934734,
+    "radiation_coefficient": 1.0,
+    "steps_per_period": 1024,
+    "ramp_cycles": 30,
+    "min_cycles": 67,
+    "max_cycles": 1000,
+    "cycle_tolerance": 0.001,
+    "consecutive_cycles": 10,
+    "converge": true,
+    "pod_amplitudes": [
+      0.8,
+      0.9,
+      1.0,
+      1.1
+    ],
+    "pod_frequency_factors": [
+      0.95,
+      0.96,
+      0.97,
+      0.98,
+      0.99,
+      1.0,
+      1.01,
+      1.02,
+      1.03,
+      1.04,
+      1.05
+    ],
+    "nn_amplitudes": [
+      0.8,
+      0.9,
+      1.0,
+      1.1
+    ],
+    "nn_frequency_factors": [
+      0.95,
+      0.97,
+      0.99,
+      1.01,
+      1.03,
+      1.05
+    ],
+    "rank": 48,
+    "pod_available_rank": 128,
+    "node_block": 2048,
+    "extra_snapshot_cycles": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50
+    ],
+    "exact_samples_per_case": 10000,
+    "base_rows": 1776,
+    "perturbed_base_rows": 1764,
+    "validation_rows": 1500,
+    "test_rows": 1500,
+    "augmentation_rows": 30000,
+    "perturbation_levels": 17,
+    "perturbation_min": -0.2,
+    "perturbation_max": 0.2,
+    "selected_perturbation_rows": 2400,
+    "seed": 20260928,
+    "training_selection_seed": 20260930,
+    "pair_rank": 40,
+    "cubic_rank": 9,
+    "epsilon": 0.003,
+    "cubic_epsilon": 0.03,
+    "least_squares_cond": 1e-10,
+    "blas_threads": 6,
+    "fem_workers": 3,
+    "fem_threads": 3,
+    "augmentation_threads": 2,
+    "prediction_cycles": 300,
+    "prediction_cases": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        0.95,
+        0.985
+      ],
+      [
+        1.05,
+        1.015
+      ],
+      [
+        1.05,
+        0.995
+      ]
+    ],
+    "prediction_state_norm_guard": 10.0
+  },
+  "smoke": {
+    "profile": "smoke",
+    "nx": 16,
+    "ny": 32,
+    "beta": 3.0,
+    "eta": 0.0005,
+    "omega_reference": 50.418647180934734,
+    "radiation_coefficient": 1.0,
+    "steps_per_period": 128,
+    "ramp_cycles": 30,
+    "min_cycles": 16,
+    "max_cycles": 16,
+    "cycle_tolerance": 0.001,
+    "consecutive_cycles": 10,
+    "converge": false,
+    "pod_amplitudes": [
+      0.8
+    ],
+    "pod_frequency_factors": [
+      0.95,
+      1.05
+    ],
+    "nn_amplitudes": [
+      0.8
+    ],
+    "nn_frequency_factors": [
+      0.95,
+      1.05
+    ],
+    "rank": 4,
+    "pod_available_rank": 8,
+    "node_block": 128,
+    "extra_snapshot_cycles": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "exact_samples_per_case": 512,
+    "base_rows": 32,
+    "perturbed_base_rows": 32,
+    "validation_rows": 16,
+    "test_rows": 16,
+    "augmentation_rows": 544,
+    "perturbation_levels": 17,
+    "perturbation_min": -0.2,
+    "perturbation_max": 0.2,
+    "selected_perturbation_rows": 64,
+    "seed": 20260928,
+    "training_selection_seed": 20260930,
+    "pair_rank": 4,
+    "cubic_rank": 2,
+    "epsilon": 0.003,
+    "cubic_epsilon": 0.03,
+    "least_squares_cond": 1e-10,
+    "blas_threads": 1,
+    "fem_workers": 1,
+    "fem_threads": 1,
+    "augmentation_threads": 1,
+    "prediction_cycles": 2,
+    "prediction_cases": [
+      [
+        0.8,
+        1.0
+      ]
+    ],
+    "prediction_state_norm_guard": 10.0
+  }
+}

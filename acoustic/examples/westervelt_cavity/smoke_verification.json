@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "scope": "Small-grid workflow verification only; paper profile not run and no paper accuracy/timing claim.",
+  "profile": "smoke",
+  "exit_code": 0,
+  "first_complete_wall_seconds": 9.4425132,
+  "cache_reuse_exit_code": 0,
+  "cache_reuse_wall_seconds": 1.2255567,
+  "nodes": 233,
+  "pod_cases": 2,
+  "nn_cases": 2,
+  "snapshots_per_case": 144,
+  "pod_rank": 4,
+  "exact_rows_per_case": 512,
+  "augmented_rows_per_case": 680,
+  "fit_rows": 400,
+  "design_shape": [
+    400,
+    90
+  ],
+  "architecture": [
+    9,
+    89,
+    89,
+    4
+  ],
+  "predicted_cycles": 2,
+  "trajectory_shape": [
+    257,
+    4
+  ],
+  "completed_requested_horizon": true,
+  "stored_mass_orthogonality_frobenius": 7.276707769875337e-08,
+  "output_folding_relative": 1.986518467844956e-13,
+  "validation_relative_L2_percent": 3.5751061647667006,
+  "test_relative_L2_percent": 3.5270842273864504,
+  "versions": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "numba": "0.61.2"
+  },
+  "paper_training_indices_exactly_match_original24": true,
+  "paper_selected_rows": 96768,
+  "source_sha256": {
+    "common.py": "ebb147c91e1dbfc50722bd1c9e1ad98c626a220ddd9e206c06d403be094f1c33",
+    "dataset.py": "2a1fb65d50f019af6140d252b758f126b59cff3d9ece1683e2b364ba3859485f",
+    "network.py": "26086516bd01456c6ee4d02c0cde784afa9fd45127ee5b3f4a61b04f5d9d9038",
+    "physics.py": "f573d189d9f4b3a2679aadd0aadd9947bb74fe5c06ace2a14f6eda30f86786a4",
+    "run.py": "2de462b21978f3ba7a200c83f5e112cde762fb8f281aa76e9b97bd119ddeea52"
+  }
+}

@@ -1,0 +1,7 @@
+# Tested together on CPython 3.12. Install in a fresh virtual environment.
+-c constraints.txt
+numpy==2.2.6
+scipy==1.15.3
+numba==0.61.2
+matplotlib==3.10.3
+threadpoolctl==3.6.0

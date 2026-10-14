@@ -1,0 +1,96 @@
+{
+  "physics": {
+    "radius_m": 0.05,
+    "density_kg_m3": 1.204,
+    "sound_speed_m_s": 343.0,
+    "frequency_hz": 1000.0,
+    "mass_kg": 0.02,
+    "damping_ratio": 0.01,
+    "force_reference_N": 0.001,
+    "radial_wavelengths": 4.0
+  },
+  "feature_seed": 20260912,
+  "integrator": {
+    "rtol": 2e-08,
+    "atol": 1e-11,
+    "max_step_tau": 0.2
+  },
+  "prediction": {
+    "ratio": 0.9744548193197631,
+    "amplitude": 0.9,
+    "ramp_cycles": 0.35,
+    "phase": 0.63
+  },
+  "profiles": {
+    "paper": {
+      "elements": 64,
+      "pod_rank": 24,
+      "training_reference_cycles": 36,
+      "prediction_reference_cycles": 36,
+      "samples_per_reference_cycle": 256,
+      "sample_stride": 4,
+      "training_ratios": [
+        0.9,
+        0.96,
+        1.04,
+        1.1
+      ],
+      "training_phases": [
+        0.0,
+        1.5707963267948966
+      ],
+      "training_amplitudes": [
+        0.6,
+        1.2
+      ],
+      "training_ramp_cycles": 0.2,
+      "validation_ratios": [
+        0.93,
+        1.07
+      ],
+      "feature_epsilons": [
+        0.003,
+        0.001
+      ],
+      "ridge_ratios": [
+        0.0,
+        1e-14,
+        1e-12,
+        1e-10,
+        1e-08,
+        1e-06
+      ]
+    },
+    "smoke": {
+      "elements": 8,
+      "pod_rank": 8,
+      "training_reference_cycles": 4,
+      "prediction_reference_cycles": 4,
+      "samples_per_reference_cycle": 64,
+      "sample_stride": 4,
+      "training_ratios": [
+        0.9,
+        1.1
+      ],
+      "training_phases": [
+        0.0,
+        1.5707963267948966
+      ],
+      "training_amplitudes": [
+        0.6,
+        1.2
+      ],
+      "training_ramp_cycles": 0.2,
+      "validation_ratios": [
+        1.0
+      ],
+      "feature_epsilons": [
+        0.001
+      ],
+      "ridge_ratios": [
+        1e-12,
+        1e-08
+      ]
+    }
+  }
+}
