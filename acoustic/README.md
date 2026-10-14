@@ -92,3 +92,5 @@ The release implements the four stages above. Periodic-orbit continuation, Floqu
 The original `acoustic field.nb` is preserved as a historical notebook. It is not a dependency of the three examples and its older training settings must not be combined with the new Python configurations.
 
 See the [release verification record](docs/verification.md) for the configurations actually executed, newly measured errors, timing scope, and the untested full cavity run. Automated Windows and Linux smoke checks are defined in the repository workflow.
+
+For a smaller verification task at the full cavity mesh resolution, the [cavity README](examples/westervelt_cavity/README.md#one-full-resolution-fem-example) provides a single-case FEM-only command. That case has been executed through periodic convergence; it does not start the full data campaign or NN training.

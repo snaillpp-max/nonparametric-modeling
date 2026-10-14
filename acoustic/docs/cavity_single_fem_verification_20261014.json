@@ -1,0 +1,104 @@
+{
+  "status": "passed",
+  "date": "2026-10-14",
+  "scope": "One full-grid FEM data-generation case only; no POD, augmentation, fitting, or NN prediction was run.",
+  "amplitude": 1.0,
+  "frequency_factor": 1.0,
+  "nx": 1024,
+  "ny": 512,
+  "half_domain_nodes": 206081,
+  "steps_per_period": 1024,
+  "fem_workers": 1,
+  "fem_threads": 3,
+  "cycles": 81,
+  "completed_rk4_steps": 82944,
+  "pressure_cycle_difference": 0.00044565052923080584,
+  "pressure_cycle_difference_percent": 0.044565052923080585,
+  "consecutive_passing_cycles": 10,
+  "minimum_mass_factor": 0.8957941677804762,
+  "elapsed_seconds": 220.98466396331787,
+  "timing_scope": "Case integration loop, cycle comparisons, snapshot assembly and case output writing; excludes mesh assembly, parent-process startup and final campaign mesh writing.",
+  "snapshots_shape": [
+    144,
+    206081
+  ],
+  "snapshot_dtype": "float32",
+  "native_final_state_dtype": "float64",
+  "all_saved_fields_finite": true,
+  "full_domain_mass": 0.625,
+  "maximum_abs_final_pressure": 0.016366955333146294,
+  "final_pressure_full_mass_norm": 0.001788538131850454,
+  "identity": "4b00f64012f1654c0c9812bae3ae5293f158efd5d0a9e4188034844c6024dd19",
+  "source_sha256": {
+    "common.py": "ebb147c91e1dbfc50722bd1c9e1ad98c626a220ddd9e206c06d403be094f1c33",
+    "dataset.py": "2a1fb65d50f019af6140d252b758f126b59cff3d9ece1683e2b364ba3859485f",
+    "network.py": "26086516bd01456c6ee4d02c0cde784afa9fd45127ee5b3f4a61b04f5d9d9038",
+    "physics.py": "f573d189d9f4b3a2679aadd0aadd9947bb74fe5c06ace2a14f6eda30f86786a4",
+    "run.py": "2de462b21978f3ba7a200c83f5e112cde762fb8f281aa76e9b97bd119ddeea52"
+  },
+  "configuration_changes_from_paper": {
+    "pod_amplitudes": {
+      "paper": [
+        0.8,
+        0.9,
+        1.0,
+        1.1
+      ],
+      "actual": [
+        1.0
+      ]
+    },
+    "pod_frequency_factors": {
+      "paper": [
+        0.95,
+        0.96,
+        0.97,
+        0.98,
+        0.99,
+        1.0,
+        1.01,
+        1.02,
+        1.03,
+        1.04,
+        1.05
+      ],
+      "actual": [
+        1.0
+      ]
+    },
+    "nn_amplitudes": {
+      "paper": [
+        0.8,
+        0.9,
+        1.0,
+        1.1
+      ],
+      "actual": [
+        1.0
+      ]
+    },
+    "nn_frequency_factors": {
+      "paper": [
+        0.95,
+        0.97,
+        0.99,
+        1.01,
+        1.03,
+        1.05
+      ],
+      "actual": [
+        1.0
+      ]
+    },
+    "fem_workers": {
+      "paper": 3,
+      "actual": 1
+    }
+  },
+  "manifest_sha256": "8330a4200edcdc1429d75970248aef0ba549e98022f07b0d038473858ca3c47f",
+  "output_sha256": {
+    "basis_snapshots.npy": "b2a0a5f7e7562fc4b6038636f76a09e3377130b4ecbdf220e7aa2ce538815be7",
+    "final_state.npz": "d23588d224f12eb5306b3911511def145ddf8fcf2d5ecf6e285d8c58ca7b8227"
+  },
+  "limitations": "Passing the periodic convergence criterion does not measure NN accuracy or constitute a new mesh-convergence study."
+}

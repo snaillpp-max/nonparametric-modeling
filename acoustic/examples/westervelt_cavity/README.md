@@ -27,6 +27,20 @@ D:\Codex\Projects\acoustic\cavity_venv\Scripts\python.exe -B run.py --profile pa
 
 The equivalent complete run uses --stage all. The optional --config PATH accepts a JSON file with paper and smoke sections. An existing output directory must match both its stored effective configuration and actual source hashes; choose a new output directory after changing either. The original kernel requires ramp_cycles=30 and 17 perturbation levels spanning [-0.2, 0.2]; other values are rejected explicitly. Dependency versions are recorded at fit time. Completed per-case artifacts are reused only when recorded current-run identities and file hashes agree. Weighted POD construction checkpoints each completed case. An interrupted Gram or fit calculation restarts that calculation; completed case generation/projection/augmentation is retained.
 
+## One full-resolution FEM example
+
+To run only one representative FEM case, use the supplied `fem_single_case.json` configuration. It selects amplitude 1.0 and frequency ratio 1.0, with one worker and three FEM threads. The original 1024 × 512 grid, 1024 steps per period, zero initial state, forcing, and periodic convergence criterion remain unchanged.
+
+From this example directory:
+
+```bash
+python -B run.py --profile paper --config fem_single_case.json --stage generate --output ./output_single_fem
+```
+
+This command generates one full-order case, 144 pressure snapshots, the final pressure/rate state, mesh, and completion records. It does not construct POD, augment data, train a network, or integrate an NN. The configuration is supplied for this `generate` command; use the original `config.json` for the full training workflow.
+
+The actual full-grid check completed at **81 cycles (82,944 RK4 steps)**. Ten consecutive cycle differences satisfied the 0.1% threshold; the final difference was **0.0445651%**. The case timer recorded **220.98 s**, including integration, cycle comparisons, snapshot assembly, and case file writing, but excluding mesh assembly and parent-process setup. All saved fields were finite. See [the recorded single-FEM verification](../../docs/cavity_single_fem_verification_20261014.json). This verifies one FEM generation case, not the unexecuted full cavity training and NN prediction workflow.
+
 A parent launcher can set ACOUSTIC_MAX_THREADS=N to cap per-process BLAS, FEM/Numba and augmentation threads; the effective values are saved in run_config.json. FEM worker count is separate: three paper workers with cap N can use up to 3N FEM threads. Direct runs retain configured thread limits.
 
 ## Numerical details
